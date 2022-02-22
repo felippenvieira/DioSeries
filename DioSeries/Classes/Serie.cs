@@ -2,10 +2,11 @@
 {
     internal class Serie : BaseEntity
     {
-        private Genre Genre { get; set; }
-        private string Title { get; set; }
-        private string Description { get; set; }
-        private int Year { get; set; }
+        public Genre Genre { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int Year { get; set; }
+        private bool Deleted { get; set; }
 
         public Serie(int id, Genre genre, string title, string description, int year)
         {
@@ -14,6 +15,7 @@
             Title = title;
             Description = description;
             Year = year;
+            Deleted = false;
         }
 
         public override string ToString()
@@ -34,6 +36,11 @@
         public int returnId()
         {
             return Id;
+        }
+
+        public void DeleteSerie()
+        {
+            Deleted = true;
         }
     }
 }
