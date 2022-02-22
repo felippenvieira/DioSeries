@@ -39,6 +39,11 @@
             return Id;
         }
 
+        public bool returnDeleted()
+        {
+            return Deleted;
+        }
+
         public void DeleteSerie()
         {
             Deleted = true;

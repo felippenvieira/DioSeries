@@ -2,42 +2,40 @@
 
 SerieRepository repositories = new SerieRepository();
 
-void Main(string[] args)
+
+string userOption = GetUserOption();
+
+while (userOption.ToUpper() != "X")
 {
-    string userOption = GetUserOption();
-
-    while (userOption.ToUpper() != "X")
+    switch (userOption)
     {
-        switch (userOption)
-        {
-            case "1":
-                ShowList();
-                break;
-            case "2":
-                InsertSerie();
-                break;
-            case "3":
-                UpdateSerie();
-                break;
-            case "4":
-                DeleteSerie();
-                break;
-            case "5":
-                ShowSerie();
-                break;
-            case "C":
-                Console.Clear();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-
-        userOption = GetUserOption();
+        case "1":
+            ShowList();
+            break;
+        case "2":
+            InsertSerie();
+            break;
+        case "3":
+            UpdateSerie();
+            break;
+        case "4":
+            DeleteSerie();
+            break;
+        case "5":
+            ShowSerie();
+            break;
+        case "C":
+            Console.Clear();
+            break;
+        default:
+            throw new ArgumentOutOfRangeException();
     }
 
-    Console.WriteLine("Obrigado por utilizar nossos serviços.");
-    Console.WriteLine();
+    userOption = GetUserOption();
 }
+
+Console.WriteLine("Obrigado por utilizar nossos serviços.");
+Console.WriteLine();
 
 void ShowList()
 {
@@ -53,7 +51,9 @@ void ShowList()
 
     foreach (var serie in list)
     {
-        Console.WriteLine("#ID {0}: - {1}", serie.returnId, serie.returnTitle);
+        var deleted = serie.returnDeleted();
+
+        Console.WriteLine("#ID {0}: - {1} {2}", serie.returnId(), serie.returnTitle(), (deleted ? "*Excluído*" : ""));
     }
 }
 
