@@ -15,5 +15,25 @@
             Description = description;
             Year = year;
         }
+
+        public override string ToString()
+        {
+            string returnToString = "";
+            returnToString += "Genre: " + Genre + Environment.NewLine;
+            returnToString += "Title: " + Title + Environment.NewLine;
+            returnToString += "Description: " + Description + Environment.NewLine;
+            returnToString += "Release Date: " + Year;
+            return returnToString;
+        }
+
+        public string returnTitle()
+        {
+            return Title;
+        }
+
+        public int returnId()
+        {
+            return Id;
+        }
     }
 }
