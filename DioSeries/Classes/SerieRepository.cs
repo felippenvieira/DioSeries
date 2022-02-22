@@ -5,7 +5,7 @@ namespace DioSeries
 {
     public class SerieRepository : IRepository<Serie>
     {
-        private List<Serie> serieList = new List<Serie>();
+        private readonly List<Serie> serieList = new List<Serie>();
         public void Update(int id, Serie entity)
         {
             serieList[id] = entity;

@@ -1,6 +1,6 @@
 ﻿namespace DioSeries
 {
-    internal class BaseEntity
+    public class BaseEntity
     {
         public int Id { get; protected set; }
     }
