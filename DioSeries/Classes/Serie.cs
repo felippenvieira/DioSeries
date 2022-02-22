@@ -24,7 +24,7 @@
             returnToString += "Genre: " + Genre + Environment.NewLine;
             returnToString += "Title: " + Title + Environment.NewLine;
             returnToString += "Description: " + Description + Environment.NewLine;
-            returnToString += "Release Date: " + Year;
+            returnToString += "Release Date: " + Year + Environment.NewLine;
             returnToString += "Excluído: " + Deleted;
             return returnToString;
         }
